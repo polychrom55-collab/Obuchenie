@@ -12,7 +12,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; c
 .hero-tag { display: inline-block; background: #D4537E; color: #fff; font-size: 12px; font-weight: 600; padding: 4px 14px; border-radius: 20px; margin-bottom: 18px; letter-spacing: 0.05em; }
 .hero h1 { font-size: 32px; font-weight: 600; color: #4B1528; line-height: 1.25; margin-bottom: 16px; }
 .hero p { font-size: 16px; color: #713040; line-height: 1.7; max-width: 560px; margin: 0 auto 32px; }
-.hero-btn { display: inline-block; background: #D4537E; color: #fff; font-size: 17px; font-weight: 600; padding: 16px 40px; border-radius: 50px; cursor: pointer; border: none; text-decoration: none; }
+.hero-btn { display: inline-block; background: #D4537E; color: #fff; font-size: 17px; font-weight: 600; padding: 16px 40px; border-radius: 50px; text-decoration: none; }
 .hero-btn:hover { background: #993556; }
 
 .badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding: 32px 24px; background: #fff; border-bottom: 1px solid #f0e0e5; }
@@ -33,6 +33,18 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; c
 .photo-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s; }
 .photo-wrap:hover img { transform: scale(1.04); }
 .photo-label { text-align: center; font-size: 12px; color: #993556; margin-top: 6px; font-weight: 500; }
+
+/* VIDEO */
+.video-section { background: #fafafa; border-top: 1px solid #f0e0e5; border-bottom: 1px solid #f0e0e5; padding: 48px 24px; }
+.video-inner { max-width: 680px; margin: 0 auto; }
+.video-inner .section-label { margin-bottom: 10px; }
+.video-inner h2 { margin-bottom: 20px; }
+.video-frame { position: relative; width: 100%; padding-bottom: 56.25%; border-radius: 14px; overflow: hidden; background: #1a1a1a; }
+.video-frame iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+.video-placeholder { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; background: #2a1a20; }
+.video-placeholder .play { width: 64px; height: 64px; border-radius: 50%; background: #D4537E; display: flex; align-items: center; justify-content: center; }
+.video-placeholder .play svg { width: 28px; height: 28px; fill: #fff; margin-left: 4px; }
+.video-placeholder p { font-size: 14px; color: #f4c0d1; }
 
 .for-who { background: #fafafa; }
 .for-who-inner { max-width: 680px; margin: 0 auto; padding: 48px 24px; }
@@ -56,6 +68,31 @@ h2 { font-size: 24px; font-weight: 600; color: #1a1a1a; margin-bottom: 24px; }
 .inc-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 15px; color: #1a1a1a; }
 .inc-check { width: 20px; height: 20px; border-radius: 50%; background: #D4537E; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 11px; flex-shrink: 0; margin-top: 1px; }
 
+/* EARNINGS */
+.earnings { background: linear-gradient(135deg, #fbeaf0 0%, #f4c0d1 100%); padding: 48px 24px; }
+.earnings-inner { max-width: 680px; margin: 0 auto; }
+.earnings-inner h2 { margin-bottom: 8px; color: #4B1528; }
+.earnings-inner > p { font-size: 15px; color: #713040; margin-bottom: 28px; line-height: 1.6; }
+.earnings-calc { background: #fff; border-radius: 16px; padding: 28px 24px; border: 1px solid #ED93B1; }
+.calc-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #f0e0e5; font-size: 15px; }
+.calc-row:last-child { border-bottom: none; font-weight: 600; font-size: 17px; }
+.calc-row span:first-child { color: #666; }
+.calc-row span:last-child { color: #1a1a1a; }
+.calc-row.total span:last-child { color: #D4537E; font-size: 22px; }
+.calc-note { font-size: 12px; color: #993556; margin-top: 14px; text-align: center; }
+
+/* FAQ */
+.faq { padding: 48px 24px; max-width: 680px; margin: 0 auto; }
+.faq-list { display: flex; flex-direction: column; gap: 8px; }
+.faq-item { border: 1px solid #f0e0e5; border-radius: 12px; overflow: hidden; }
+.faq-q { width: 100%; background: #fff; border: none; text-align: left; padding: 18px 20px; font-size: 15px; font-weight: 600; color: #1a1a1a; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.faq-q:hover { background: #fafafa; }
+.faq-q .faq-arrow { font-size: 12px; color: #D4537E; transition: transform 0.2s; flex-shrink: 0; }
+.faq-q.open .faq-arrow { transform: rotate(180deg); }
+.faq-a { display: none; padding: 0 20px 18px; font-size: 14px; color: #666; line-height: 1.7; }
+.faq-a.open { display: block; }
+
+/* CTA */
 .cta-section { padding: 56px 24px; text-align: center; background: #fff; }
 .cta-section h2 { font-size: 26px; font-weight: 600; color: #1a1a1a; margin-bottom: 8px; }
 .cta-section > p { font-size: 16px; color: #666; margin-bottom: 10px; }
@@ -63,7 +100,7 @@ h2 { font-size: 24px; font-weight: 600; color: #1a1a1a; margin-bottom: 24px; }
 .price-label { font-size: 13px; color: #666; margin-bottom: 4px; }
 .price-val { font-size: 42px; font-weight: 700; color: #D4537E; }
 .price-note { font-size: 13px; color: #666; margin-top: 4px; }
-.pay-btn { display: inline-block; background: #D4537E; color: #fff; font-size: 18px; font-weight: 600; padding: 18px 52px; border-radius: 50px; cursor: pointer; border: none; margin-top: 8px; text-decoration: none; }
+.pay-btn { display: inline-block; background: #D4537E; color: #fff; font-size: 18px; font-weight: 600; padding: 18px 52px; border-radius: 50px; text-decoration: none; margin-top: 8px; }
 .pay-btn:hover { background: #993556; }
 .pay-sub { font-size: 12px; color: #999; margin-top: 12px; }
 
@@ -74,7 +111,7 @@ h2 { font-size: 24px; font-weight: 600; color: #1a1a1a; margin-bottom: 24px; }
 .oferta-wrap { border-top: 1px solid #f0e0e5; max-width: 680px; margin: 0 auto; padding: 0 24px; }
 .oferta-toggle { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; cursor: pointer; border: none; background: none; width: 100%; text-align: left; }
 .oferta-toggle span { font-size: 13px; color: #999; }
-.oferta-toggle .arrow { font-size: 11px; color: #999; transition: transform 0.2s; }
+.oferta-arrow { font-size: 11px; color: #999; transition: transform 0.2s; }
 .oferta-body { display: none; padding-bottom: 32px; }
 .oferta-body.open { display: block; }
 .oferta-body h3 { font-size: 14px; font-weight: 600; color: #1a1a1a; margin: 18px 0 6px; }
@@ -85,7 +122,7 @@ h2 { font-size: 24px; font-weight: 600; color: #1a1a1a; margin-bottom: 24px; }
 @media (max-width: 480px) {
   .hero h1 { font-size: 24px; }
   .about { flex-direction: column; }
-  .photo-strip { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .photo-strip { gap: 6px; }
   .photo-wrap { height: 110px; }
   .who-grid { grid-template-columns: repeat(2, 1fr); }
 }
@@ -145,12 +182,33 @@ h2 { font-size: 24px; font-weight: 600; color: #1a1a1a; margin-bottom: 24px; }
     <div class="photo-label">Пригласительные</div>
   </div>
   <div>
-    <div class="photo-wrap"><img src="photo2.jpg" alt="Готовые приглашения"></div>
+    <div class="photo-wrap"><img src="photo2.jpg" alt="Конверты и печать"></div>
     <div class="photo-label">Конверты и печать</div>
   </div>
   <div>
-    <div class="photo-wrap"><img src="photo3.jpg" alt="Свадебная полиграфия"></div>
+    <div class="photo-wrap"><img src="photo3.jpg" alt="Полный комплект"></div>
     <div class="photo-label">Полный комплект</div>
+  </div>
+</div>
+
+<!-- ВИДЕО — замени VIDEO_ID на ID твоего ролика с YouTube -->
+<div class="video-section">
+  <div class="video-inner">
+    <div class="section-label">Презентация курса</div>
+    <h2>Посмотри, как это работает</h2>
+    <div class="video-frame">
+      <!-- Когда загрузишь видео на YouTube, замени ВСТАВЬ_ID_ВИДЕО на ID из ссылки -->
+      <!-- Например: если ссылка youtube.com/watch?v=abc123, то ID = abc123 -->
+      <div class="video-placeholder">
+        <div class="play">
+          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <p>Видео появится после загрузки на YouTube</p>
+      </div>
+      <!-- РАСКОММЕНТИРУЙ И ВСТАВЬ ID когда загрузишь видео:
+      <iframe src="https://www.youtube.com/embed/ВСТАВЬ_ID_ВИДЕО" allowfullscreen></iframe>
+      -->
+    </div>
   </div>
 </div>
 
@@ -176,7 +234,7 @@ h2 { font-size: 24px; font-weight: 600; color: #1a1a1a; margin-bottom: 24px; }
     <div class="lesson"><div class="lesson-num">1</div><div><div class="lesson-title">Оборудование</div><div class="lesson-desc">Что нужно, как выбрать и купить не переплачивая. Особенности, обслуживание и нюансы работы с техникой.</div></div></div>
     <div class="lesson"><div class="lesson-num">2</div><div><div class="lesson-title">Работа в CorelDRAW</div><div class="lesson-desc">Обучение от дизайнера-преподавателя с опытом всей жизни. После урока уверенно работаете в программе. Получаете 10 шаблонов пригласительных и папку из 100 шрифтов.</div></div></div>
     <div class="lesson"><div class="lesson-num">3</div><div><div class="lesson-title">Сборка пригласительных</div><div class="lesson-desc">Физическая работа со свадебной продукцией. Видите весь процесс от начала до готового изделия вживую.</div></div></div>
-    <div class="lesson"><div class="lesson-num">4</div><div><div class="lesson-title">Продажи и клиенты</div><div class="lesson-desc">Где брать клиентов, как составить объявление, как продавать без страха. После этого урока страх продаж пропадёт. Урок обязателен.</div></div></div>
+    <div class="lesson"><div class="lesson-num">4</div><div><div class="lesson-title">Продажи, ценообразование и клиенты</div><div class="lesson-desc">Где брать клиентов, как составить объявление, как правильно назначить цену чтобы и зарабатывать и не отпугнуть покупателя. Как продавать без страха. После этого урока страх продаж пропадёт. Урок обязателен.</div></div></div>
   </div>
 </div>
 
@@ -192,7 +250,140 @@ h2 { font-size: 24px; font-weight: 600; color: #1a1a1a; margin-bottom: 24px; }
       <li><div class="inc-check">✓</div>Папка с 100 шрифтами для установки</li>
       <li><div class="inc-check">✓</div>Урок по продажам и поиску клиентов</li>
       <li><div class="inc-check">✓</div>Обучение CorelDRAW от профессионального дизайнера</li>
+      <li><div class="inc-check">✓</div>Доступ сразу после оплаты — ссылка на Яндекс Диск с видеоуроками</li>
+      <li><div class="inc-check">✓</div>Смотри в удобном темпе — перематывай, возобновляй, никуда не спеши</li>
     </ul>
+  </div>
+</div>
+
+<!-- ЗАРАБОТОК -->
+<div class="earnings">
+  <div class="earnings-inner">
+    <div class="section-label">Сколько можно заработать</div>
+    <h2 style="color:#4B1528;">Реальные цифры на реальном примере</h2>
+    <p>Средний заказ — комплект из 10 пригласительных. Вот как выглядит ваша прибыль:</p>
+    <div class="earnings-calc">
+      <div class="calc-row">
+        <span>Средняя стоимость одного пригласительного</span>
+        <span>600 ₽</span>
+      </div>
+      <div class="calc-row">
+        <span>Комплект 10 штук</span>
+        <span>6 000 ₽</span>
+      </div>
+      <div class="calc-row">
+        <span>Себестоимость материалов</span>
+        <span>— 1 200 ₽</span>
+      </div>
+      <div class="calc-row total">
+        <span>Чистая прибыль с заказа</span>
+        <span>4 800 ₽</span>
+      </div>
+    </div>
+    <p class="calc-note">2–4 заказа в неделю = 38 000–76 000 ₽ в месяц. И это работая из дома, в своём темпе.</p>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="faq">
+  <div class="section-label">Частые вопросы</div>
+  <h2>Отвечаем на главные сомнения</h2>
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Нужен ли опыт в дизайне или полиграфии?
+        <span class="faq-arrow">▼</span>
+      </button>
+      <div class="faq-a">Нет. Курс создан специально для тех, кто начинает с нуля. Урок по CorelDRAW ведёт профессиональный дизайнер-преподаватель — после него вы сможете уверенно работать в программе. Плюс вы получаете 10 готовых шаблонов, которые достаточно просто редактировать.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Какой принтер нужен и сколько он стоит?
+        <span class="faq-arrow">▼</span>
+      </button>
+      <div class="faq-a">Первый урок полностью посвящён оборудованию: какой принтер выбрать, где купить выгоднее и как не переплатить. Мы разбираем конкретные модели и рассказываем обо всех нюансах, чтобы вы не совершили ошибок при покупке.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Нужно ли оформлять ИП или самозанятость?
+        <span class="faq-arrow">▼</span>
+      </button>
+      <div class="faq-a">Никаких документов не нужно — первое время можно принимать оплату прямо на карту. Просто, быстро и без лишней бюрократии. Начать можно сразу после прохождения курса.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Где брать клиентов? Я никогда ничего не продавала.
+        <span class="faq-arrow">▼</span>
+      </button>
+      <div class="faq-a">Именно для этого есть 4-й урок — он обязателен. Вы узнаете, где размещать объявления, как они должны выглядеть и как разговаривать с клиентами. После урока страх продаж пропадает — проверено на практике.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Сколько времени нужно уделять работе?
+        <span class="faq-arrow">▼</span>
+      </button>
+      <div class="faq-a">Достаточно 1–2 часов в день. Работа легко совмещается с домашними делами, уходом за ребёнком и любым другим занятием. Вы сами выбираете когда и сколько работать — никаких обязательств и дедлайнов.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Сколько можно реально зарабатывать?
+        <span class="faq-arrow">▼</span>
+      </button>
+      <div class="faq-a">Средний чек с одного комплекта из 10 пригласительных — около 6 000 ₽. Себестоимость материалов — примерно 600 ₽. Чистая прибыль с заказа — 5 400 ₽. При 2 заказах в неделю это порядка 43 000 ₽ в месяц. И это работая из дома, без офиса и начальников.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Сколько времени занимает один заказ?
+        <span class="faq-arrow">▼</span>
+      </button>
+      <div class="faq-a">Комплект из 10 пригласительных делается примерно за 2 часа. Это значит что один вечер — и заказ готов. Вы сами решаете когда работать, никаких срочных дедлайнов.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Как долго открыт доступ к курсу?
+        <span class="faq-arrow">▼</span>
+      </button>
+      <div class="faq-a">Сразу после оплаты вы получаете ссылку на Яндекс Диск — там лежат все видеоуроки, шаблоны и шрифты. Смотрите в удобном темпе, перематывайте, возобновляйте — никуда не спешите. Доступ навсегда.</div>
+    </div>
+
+  </div>
+</div>
+
+<div style="background:#fafafa;border-top:1px solid #f0e0e5;border-bottom:1px solid #f0e0e5;padding:48px 24px;">
+  <div style="max-width:680px;margin:0 auto;">
+    <div class="section-label">Как всё устроено</div>
+    <h2>Три шага до старта</h2>
+    <div style="display:flex;flex-direction:column;gap:16px;margin-top:8px;">
+      <div style="display:flex;gap:20px;align-items:flex-start;">
+        <div style="width:44px;height:44px;border-radius:50%;background:#D4537E;color:#fff;font-size:18px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+        <div>
+          <div style="font-size:15px;font-weight:600;color:#1a1a1a;margin-bottom:4px;">Оплачиваете курс</div>
+          <div style="font-size:13px;color:#666;line-height:1.6;">Нажимаете кнопку и оплачиваете через Робокассу — безопасно, картой или через СБП.</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:20px;align-items:flex-start;">
+        <div style="width:44px;height:44px;border-radius:50%;background:#D4537E;color:#fff;font-size:18px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+        <div>
+          <div style="font-size:15px;font-weight:600;color:#1a1a1a;margin-bottom:4px;">Сразу получаете ссылку</div>
+          <div style="font-size:13px;color:#666;line-height:1.6;">После оплаты мгновенно приходит ссылка на Яндекс Диск со всеми видеоуроками, шаблонами и шрифтами.</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:20px;align-items:flex-start;">
+        <div style="width:44px;height:44px;border-radius:50%;background:#D4537E;color:#fff;font-size:18px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+        <div>
+          <div style="font-size:15px;font-weight:600;color:#1a1a1a;margin-bottom:4px;">Учитесь в своём темпе</div>
+          <div style="font-size:13px;color:#666;line-height:1.6;">Смотрите видео когда удобно, перематывайте, возобновляйте. Комплект из 10 пригласительных вы научитесь делать за 2 часа. Никуда не спешить — доступ навсегда.</div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -229,7 +420,7 @@ h2 { font-size: 24px; font-weight: 600; color: #1a1a1a; margin-bottom: 24px; }
   <div class="oferta-wrap">
     <button class="oferta-toggle" onclick="toggleOferta()">
       <span>Публичная оферта — договор информационно-консультативных услуг</span>
-      <span class="arrow" id="arrow">▼</span>
+      <span class="oferta-arrow" id="oferta-arrow">▼</span>
     </button>
     <div class="oferta-body" id="oferta-body">
       <h3>1. Общие положения</h3>
@@ -237,11 +428,11 @@ h2 { font-size: 24px; font-weight: 600; color: #1a1a1a; margin-bottom: 24px; }
       <h3>2. Предмет договора</h3>
       <p>Исполнитель обязуется оказать Заказчику информационно-консультационные услуги, а Заказчик обязуется оплатить их в размере, порядке и сроки, установленные настоящим Договором. Акцепт Оферты выражается в оплате услуг Заказчиком.</p>
       <h3>3. Права и обязанности сторон</h3>
-      <p>Исполнитель обязан оказать услуги в согласованные сроки и с надлежащим качеством. Заказчик обязан своевременно произвести оплату и предоставить необходимую информацию. Заказчик вправе контролировать ход оказания услуг, не вмешиваясь в деятельность Исполнителя.</p>
+      <p>Исполнитель обязан оказать услуги в согласованные сроки и с надлежащим качеством. Заказчик обязан своевременно произвести оплату и предоставить необходимую информацию.</p>
       <h3>4. Цена и порядок расчётов</h3>
       <p>Стоимость услуг устанавливается на сайте Исполнителя. Все расчёты производятся в безналичном порядке.</p>
       <h3>5. Возврат денежных средств</h3>
-      <p>Возврат осуществляется в соответствии с Законом РФ № 2300-1 «О защите прав потребителей» на основании претензии Заказчика. Срок ответа на претензию — 10 рабочих дней.</p>
+      <p>Возврат осуществляется в соответствии с Законом РФ № 2300-1 «О защите прав потребителей» на основании претензии Заказчика. Срок ответа — 10 рабочих дней.</p>
       <h3>6. Конфиденциальность</h3>
       <p>Стороны обязуются сохранять конфиденциальность информации в соответствии с ФЗ № 152-ФЗ «О персональных данных».</p>
       <h3>7. Форс-мажор</h3>
@@ -265,9 +456,19 @@ h2 { font-size: 24px; font-weight: 600; color: #1a1a1a; margin-bottom: 24px; }
 </div>
 
 <script>
+function toggleFaq(btn) {
+  const answer = btn.nextElementSibling;
+  const isOpen = answer.classList.contains('open');
+  document.querySelectorAll('.faq-a.open').forEach(a => a.classList.remove('open'));
+  document.querySelectorAll('.faq-q.open').forEach(b => b.classList.remove('open'));
+  if (!isOpen) {
+    answer.classList.add('open');
+    btn.classList.add('open');
+  }
+}
 function toggleOferta() {
   const body = document.getElementById('oferta-body');
-  const arrow = document.getElementById('arrow');
+  const arrow = document.getElementById('oferta-arrow');
   const isOpen = body.classList.contains('open');
   body.classList.toggle('open', !isOpen);
   arrow.style.transform = isOpen ? '' : 'rotate(180deg)';
