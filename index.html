@@ -387,6 +387,10 @@ h2 { font-size: 24px; font-weight: 600; color: #1a1a1a; margin-bottom: 24px; }
     <div class="price-note">Доступ навсегда · Все материалы включены</div>
   </div>
   <br>
+  <div style="margin: 24px auto 0; max-width: 320px;">
+    <input type="email" id="buyer-email" placeholder="Ваш email для чека" style="width:100%;padding:14px 18px;font-size:15px;border:1px solid #f0e0e5;border-radius:50px;outline:none;text-align:center;margin-bottom:12px;" required>
+  </div>
+  <br>
   <button class="pay-btn" id="pay-btn" onclick="startPayment()">Оплатить 9 900 ₽</button>
   <div class="pay-sub">Безопасная оплата через ЮKassa · Мгновенный доступ после оплаты</div>
 </div>
@@ -469,11 +473,22 @@ document.querySelector('a[href="#cta"]').addEventListener('click', function(e) {
 
 async function startPayment() {
   const btn = document.getElementById('pay-btn');
+  const emailInput = document.getElementById('buyer-email');
+  const email = emailInput ? emailInput.value.trim() : '';
+  if (!email || !email.includes('@')) {
+    alert('Пожалуйста, введите ваш email для получения чека');
+    emailInput.focus();
+    return;
+  }
   btn.textContent = 'Создаём платёж...';
   btn.disabled = true;
   btn.style.opacity = '0.7';
   try {
-    const response = await fetch('/.netlify/functions/create-payment', { method: 'POST' });
+    const response = await fetch('/.netlify/functions/create-payment', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email })
+    });
     const data = await response.json();
     if (data.url) {
       window.location.href = data.url;
