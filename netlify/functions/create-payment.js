@@ -16,7 +16,7 @@ exports.handler = async function (event, context) {
     },
     confirmation: {
       type: "redirect",
-      return_url: "https://ТВОЙ_САЙТ.netlify.app/success.html",
+      return_url: "https://luminous-bunny-9d26b3.netlify.app/success.html",
     },
     capture: true,
     description: "Курс: Заработок на свадебной полиграфии из дома",
