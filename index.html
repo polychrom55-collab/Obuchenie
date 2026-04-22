@@ -397,9 +397,8 @@ h2 { font-size: 24px; font-weight: 600; color: #1a1a1a; margin-bottom: 24px; }
     <div class="price-note">Доступ навсегда · Все материалы включены</div>
   </div>
   <br>
-  <!-- ЗАМЕНИ # НА СВОЮ ССЫЛКУ ОТ РОБОКАССЫ -->
-  <a class="pay-btn" href="#">Оплатить через Робокассу</a>
-  <div class="pay-sub">Безопасная оплата · Мгновенный доступ после оплаты</div>
+  <button class="pay-btn" id="pay-btn" onclick="startPayment()">Оплатить 9 900 ₽</button>
+  <div class="pay-sub">Безопасная оплата через ЮKassa · Мгновенный доступ после оплаты</div>
 </div>
 
 <div class="footer">
@@ -477,6 +476,30 @@ document.querySelector('a[href="#cta"]').addEventListener('click', function(e) {
   e.preventDefault();
   document.getElementById('cta').scrollIntoView({ behavior: 'smooth' });
 });
+
+async function startPayment() {
+  const btn = document.getElementById('pay-btn');
+  btn.textContent = 'Создаём платёж...';
+  btn.disabled = true;
+  btn.style.opacity = '0.7';
+  try {
+    const response = await fetch('/.netlify/functions/create-payment', { method: 'POST' });
+    const data = await response.json();
+    if (data.url) {
+      window.location.href = data.url;
+    } else {
+      alert('Ошибка при создании платежа. Напишите нам в Telegram @redstamp55');
+      btn.textContent = 'Оплатить 9 900 ₽';
+      btn.disabled = false;
+      btn.style.opacity = '1';
+    }
+  } catch (e) {
+    alert('Ошибка соединения. Напишите нам в Telegram @redstamp55');
+    btn.textContent = 'Оплатить 9 900 ₽';
+    btn.disabled = false;
+    btn.style.opacity = '1';
+  }
+}
 </script>
 </body>
 </html>
