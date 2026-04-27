@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Заработок на свадебной полиграфии из дома — Красная Печать</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --crimson:    #6E1515;
+  --crimson-dk: #4A0D0D;
+  --crimson-md: #8B2020;
+  --crimson-lt: #B84040;
+  --gold:       oklch(72% 0.09 60);
+  --gold-lt:    oklch(85% 0.07 60);
+  --cream:      oklch(97% 0.008 60);
+  --warm-white: oklch(99% 0.004 60);
+  --text-dark:  #1A0A0A;
+  --text-mid:   #5A3030;
+  --text-light: #8A6060;
+  --border:     rgba(110,21,21,0.12);
+  --border-gold: rgba(180,140,80,0.3);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-dark);
+  background: var(--warm-white);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 32px;
+  background: rgba(74,13,13,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.nav-logo { height: 36px; }
+.nav-cta {
+  display: inline-flex; align-items: center;
+  background: var(--gold); color: var(--crimson-dk);
+  font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600;
+  padding: 8px 20px; border-radius: 2px; text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: background 0.2s, transform 0.15s;
+}
+.nav-cta:hover { background: var(--gold-lt); transform: translateY(-1px); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100svh;
+  background: var(--crimson-dk);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+  padding: 100px 24px 64px;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(139,32,32,0.5) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-ornament {
+  position: absolute; opacity: 0.06; pointer-events: none;
+  font-family: serif; font-size: 500px; line-height: 1;
+  color: #fff; top: -80px; left: 50%; transform: translateX(-50%);
+  user-select: none;
+}
+.hero-logo {
+  width: min(360px, 80vw);
+  margin-bottom: 48px;
+  position: relative; z-index: 1;
+  filter: drop-shadow(0 8px 32px rgba(0,0,0,0.4));
+}
+.hero-tag {
+  display: inline-block;
+  border: 1px solid var(--border-gold);
+  color: var(--gold-lt);
+  font-size: 11px; font-weight: 500;
+  padding: 5px 16px; letter-spacing: 0.12em; text-transform: uppercase;
+  margin-bottom: 24px; position: relative; z-index: 1;
+}
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 6vw, 68px);
+  font-weight: 600; line-height: 1.15;
+  color: #fff;
+  max-width: 760px; margin: 0 auto 20px;
+  position: relative; z-index: 1;
+}
+.hero h1 em { font-style: italic; color: var(--gold-lt); }
+.hero-sub {
+  font-size: 16px; color: rgba(255,255,255,0.6);
+  line-height: 1.75; max-width: 520px; margin: 0 auto 40px;
+  position: relative; z-index: 1;
+}
+.hero-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--gold); color: var(--crimson-dk);
+  font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600;
+  padding: 16px 40px; text-decoration: none;
+  letter-spacing: 0.04em;
+  position: relative; z-index: 1;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 4px 24px rgba(180,140,80,0.3);
+}
+.hero-btn:hover { background: var(--gold-lt); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(180,140,80,0.4); }
+.hero-scroll {
+  position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  color: rgba(255,255,255,0.3); font-size: 11px; letter-spacing: 0.1em;
+  text-transform: uppercase; z-index: 1;
+  animation: bounce 2s infinite;
+}
+@keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(6px)} }
+.hero-scroll::after {
+  content: '';
+  width: 1px; height: 40px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent);
+}
+
+/* ── BADGES ── */
+.badges {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;
+  padding: 28px 24px;
+  background: var(--cream);
+  border-bottom: 1px solid var(--border);
+}
+.badge {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 13px; color: var(--text-mid);
+  background: #fff; border: 1px solid var(--border);
+  padding: 7px 16px;
+}
+.badge-line { width: 20px; height: 1px; background: var(--crimson-lt); }
+
+/* ── SECTION COMMON ── */
+.section-wrap { max-width: 720px; margin: 0 auto; padding: 72px 24px; }
+.section-wrap.wide { max-width: 900px; }
+.section-label {
+  font-size: 11px; font-weight: 500;
+  color: var(--crimson-lt); letter-spacing: 0.14em;
+  text-transform: uppercase; margin-bottom: 12px;
+  display: flex; align-items: center; gap: 12px;
+}
+.section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+.section-label.center { justify-content: center; }
+.section-label.center::after { display: none; }
+
+h2.serif {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 600; line-height: 1.2;
+  color: var(--crimson-dk);
+  margin-bottom: 32px;
+}
+h2.serif em { font-style: italic; color: var(--crimson-lt); }
+
+/* ── ABOUT ── */
+.about-grid {
+  display: grid; grid-template-columns: 80px 1fr;
+  gap: 28px; align-items: start;
+}
+.about-logo-wrap {
+  width: 80px; height: 80px;
+  border: 1px solid var(--border-gold);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--crimson-dk);
+  overflow: hidden;
+}
+.about-logo-wrap img { width: 80px; height: 80px; object-fit: cover; }
+.about-text h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px; font-weight: 600; color: var(--crimson-dk);
+  margin-bottom: 8px;
+}
+.about-text p { font-size: 14px; color: var(--text-light); line-height: 1.8; margin-bottom: 16px; }
+.social-links { display: flex; gap: 8px; flex-wrap: wrap; }
+.social-btn {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: 12px; font-weight: 500;
+  padding: 7px 14px;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  color: var(--text-mid);
+  background: transparent;
+  transition: border-color 0.2s, color 0.2s;
+  letter-spacing: 0.02em;
+}
+.social-btn:hover { border-color: var(--crimson-lt); color: var(--crimson); }
+.social-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+/* ── PHOTO STRIP ── */
+.photo-grid {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 12px; padding: 0 24px; max-width: 720px; margin: 0 auto 64px;
+}
+.photo-card { position: relative; }
+.photo-wrap {
+  overflow: hidden;
+  height: 220px;
+  background: var(--cream);
+  border: 1px solid var(--border);
+}
+.photo-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s; }
+.photo-wrap:hover img { transform: scale(1.06); }
+/* striped placeholder */
+.photo-placeholder {
+  width: 100%; height: 100%;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 6px,
+    rgba(110,21,21,0.05) 6px,
+    rgba(110,21,21,0.05) 7px
+  );
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 8px;
+}
+.photo-placeholder span {
+  font-family: monospace; font-size: 11px;
+  color: var(--crimson-lt); text-align: center; padding: 0 8px;
+  line-height: 1.5;
+}
+.photo-label {
+  text-align: center; font-size: 11px;
+  color: var(--text-light); margin-top: 8px;
+  letter-spacing: 0.06em; text-transform: uppercase;
+}
+
+/* ── DIVIDER ── */
+.divider {
+  max-width: 720px; margin: 0 auto;
+  height: 1px; background: var(--border);
+}
+.ornament-divider {
+  text-align: center; padding: 0 24px;
+  color: var(--crimson-lt); font-size: 18px;
+  letter-spacing: 0.3em; margin: -10px 0;
+  position: relative; z-index: 1;
+}
+
+/* ── VIDEO ── */
+.video-bg { background: var(--crimson-dk); padding: 72px 24px; }
+.video-inner { max-width: 720px; margin: 0 auto; }
+.video-inner .section-label { color: var(--gold-lt); }
+.video-inner .section-label::after { background: rgba(255,255,255,0.1); }
+.video-inner h2.serif { color: #fff; }
+.video-frame {
+  position: relative; width: 100%; padding-bottom: 56.25%;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.video-frame iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+
+/* ── FOR WHO ── */
+.for-who-bg { background: var(--cream); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.who-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px;
+}
+.who-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  padding: 24px 16px; text-align: center;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.who-card:hover { border-color: var(--crimson-lt); transform: translateY(-2px); }
+.who-icon {
+  width: 12px; height: 12px; margin: 0 auto 16px;
+  background: var(--crimson-lt);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+.who-card p { font-size: 13px; color: var(--text-light); line-height: 1.6; }
+
+/* ── LESSONS ── */
+.lesson-list { display: flex; flex-direction: column; gap: 2px; }
+.lesson {
+  display: grid; grid-template-columns: 48px 1fr;
+  gap: 0;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-bottom: none;
+  transition: border-color 0.2s;
+}
+.lesson:last-child { border-bottom: 1px solid var(--border); }
+.lesson:hover { border-color: var(--crimson-lt); z-index: 1; position: relative; }
+.lesson-num {
+  background: var(--crimson-dk); color: var(--gold-lt);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-weight: 600;
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px 0;
+}
+.lesson-body { padding: 20px 24px; }
+.lesson-title { font-size: 15px; font-weight: 600; color: var(--crimson-dk); margin-bottom: 6px; }
+.lesson-desc { font-size: 13px; color: var(--text-light); line-height: 1.65; }
+
+/* ── INCLUDED ── */
+.included-bg { background: var(--crimson-dk); padding: 72px 24px; }
+.included-inner { max-width: 720px; margin: 0 auto; }
+.included-inner .section-label { color: var(--gold-lt); }
+.included-inner .section-label::after { background: rgba(255,255,255,0.1); }
+.included-inner h2.serif { color: #fff; }
+.inc-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
+.inc-list li {
+  display: flex; align-items: flex-start; gap: 16px;
+  font-size: 15px; color: rgba(255,255,255,0.85);
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.inc-list li:last-child { border-bottom: none; }
+.inc-check {
+  width: 20px; height: 20px; flex-shrink: 0;
+  border: 1px solid var(--gold-lt);
+  color: var(--gold-lt);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; margin-top: 1px;
+}
+
+/* ── EARNINGS ── */
+.earnings-bg { background: var(--cream); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.earnings-inner { max-width: 720px; margin: 0 auto; padding: 72px 24px; }
+.earnings-calc {
+  background: #fff;
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+.calc-header {
+  background: var(--crimson-dk); padding: 16px 24px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px; color: var(--gold-lt);
+  letter-spacing: 0.1em; text-transform: uppercase;
+}
+.calc-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 14px 24px;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+.calc-row:last-child { border-bottom: none; }
+.calc-row span:first-child { color: var(--text-light); }
+.calc-row span:last-child { font-weight: 500; color: var(--text-dark); }
+.calc-row.total {
+  background: oklch(97% 0.01 15);
+}
+.calc-row.total span:first-child { font-weight: 600; color: var(--crimson-dk); }
+.calc-row.total span:last-child {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px; font-weight: 700; color: var(--crimson);
+}
+.calc-note {
+  font-size: 12px; color: var(--text-light);
+  margin-top: 16px; text-align: center;
+  font-style: italic;
+}
+
+/* ── STEPS ── */
+.steps-bg { background: #fff; border-bottom: 1px solid var(--border); }
+.steps-grid { display: flex; flex-direction: column; gap: 0; }
+.step {
+  display: grid; grid-template-columns: 48px 1fr;
+  border-bottom: 1px solid var(--border);
+}
+.step:last-child { border-bottom: none; }
+.step-num {
+  background: var(--cream); border-right: 1px solid var(--border);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px; font-weight: 600; color: var(--crimson-lt);
+  display: flex; align-items: flex-start; justify-content: center;
+  padding: 24px 0;
+}
+.step-body { padding: 24px; }
+.step-title { font-size: 15px; font-weight: 600; color: var(--crimson-dk); margin-bottom: 6px; }
+.step-desc { font-size: 13px; color: var(--text-light); line-height: 1.65; }
+
+/* ── FAQ ── */
+.faq-bg { background: var(--cream); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.faq-list { display: flex; flex-direction: column; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-item:first-child { border-top: 1px solid var(--border); }
+.faq-q {
+  width: 100%; background: transparent; border: none;
+  text-align: left; padding: 20px 0;
+  font-size: 15px; font-weight: 500; color: var(--crimson-dk);
+  cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  transition: color 0.2s;
+}
+.faq-q:hover { color: var(--crimson-lt); }
+.faq-arrow {
+  width: 20px; height: 20px; flex-shrink: 0;
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; color: var(--crimson-lt);
+  transition: transform 0.25s, border-color 0.2s;
+}
+.faq-q.open .faq-arrow { transform: rotate(180deg); border-color: var(--crimson-lt); }
+.faq-a { display: none; padding-bottom: 20px; font-size: 14px; color: var(--text-light); line-height: 1.8; }
+.faq-a.open { display: block; }
+
+/* ── CTA ── */
+.cta-bg {
+  background: var(--crimson-dk); padding: 80px 24px;
+  text-align: center;
+}
+.cta-inner { max-width: 560px; margin: 0 auto; }
+.cta-label {
+  font-size: 11px; font-weight: 500;
+  color: var(--gold-lt); letter-spacing: 0.14em;
+  text-transform: uppercase; margin-bottom: 12px;
+}
+.cta-inner h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 5vw, 52px); font-weight: 600;
+  color: #fff; line-height: 1.2; margin-bottom: 8px;
+}
+.cta-inner > p { font-size: 15px; color: rgba(255,255,255,0.5); margin-bottom: 40px; }
+
+.price-block {
+  display: inline-flex; flex-direction: column; align-items: center;
+  gap: 4px; margin-bottom: 32px;
+  padding: 24px 48px;
+  border: 1px solid var(--border-gold);
+  background: rgba(0,0,0,0.2);
+}
+.price-label-sm { font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 0.1em; text-transform: uppercase; }
+.price-val {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 56px; font-weight: 700; color: var(--gold);
+  line-height: 1;
+}
+.price-note-sm { font-size: 12px; color: rgba(255,255,255,0.35); }
+
+.email-wrap { max-width: 340px; margin: 0 auto 16px; }
+.email-input {
+  width: 100%; padding: 14px 20px;
+  font-family: 'Inter', sans-serif; font-size: 14px;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15);
+  color: #fff; outline: none; text-align: center;
+  transition: border-color 0.2s;
+}
+.email-input::placeholder { color: rgba(255,255,255,0.3); }
+.email-input:focus { border-color: var(--gold); }
+
+.pay-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--gold); color: var(--crimson-dk);
+  font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 600;
+  padding: 18px 52px; text-decoration: none; border: none; cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 4px 24px rgba(180,140,80,0.3);
+}
+.pay-btn:hover { background: var(--gold-lt); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(180,140,80,0.4); }
+.pay-btn:disabled { opacity: 0.6; transform: none; cursor: default; }
+.pay-sub { font-size: 12px; color: rgba(255,255,255,0.3); margin-top: 16px; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--crimson-dk);
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding: 40px 24px;
+  text-align: center;
+}
+footer p { font-size: 13px; color: rgba(255,255,255,0.4); margin-bottom: 16px; }
+.footer-links { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 32px; }
+
+/* ── OFERTA ── */
+.oferta-wrap {
+  max-width: 720px; margin: 0 auto;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding: 0 0;
+}
+.oferta-toggle {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 0; cursor: pointer; border: none;
+  background: none; width: 100%; text-align: left;
+}
+.oferta-toggle span { font-size: 12px; color: rgba(255,255,255,0.25); }
+.oferta-arrow-sm { font-size: 10px; color: rgba(255,255,255,0.25); transition: transform 0.2s; }
+.oferta-body { display: none; padding-bottom: 32px; }
+.oferta-body.open { display: block; }
+.oferta-body h3 { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.5); margin: 16px 0 6px; }
+.oferta-body p { font-size: 12px; color: rgba(255,255,255,0.3); line-height: 1.7; margin-bottom: 4px; }
+.requisites {
+  background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.07);
+  padding: 14px 16px; margin-top: 16px;
+  font-size: 12px; color: rgba(255,255,255,0.3); line-height: 1.9;
+}
+
+/* ── ANIMATE ON SCROLL ── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-up.delay-1 { transition-delay: 0.1s; }
+.fade-up.delay-2 { transition-delay: 0.2s; }
+.fade-up.delay-3 { transition-delay: 0.3s; }
+.fade-up.delay-4 { transition-delay: 0.4s; }
+.fade-up.delay-5 { transition-delay: 0.5s; }
+
+/* ── RESULT ── */
+.result-bg { background: #fff; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.result-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 8px; }
+.result-col {
+  padding: 28px 24px;
+  border: 1px solid var(--border);
+}
+.result-col.before { background: var(--cream); }
+.result-col.after { background: var(--crimson-dk); }
+.result-col-label {
+  font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+  font-weight: 500; margin-bottom: 16px;
+  display: flex; align-items: center; gap: 8px;
+}
+.result-col.before .result-col-label { color: var(--text-light); }
+.result-col.after .result-col-label { color: var(--gold-lt); }
+.result-col-label::before {
+  content: '';
+  display: inline-block; width: 8px; height: 8px;
+  transform: rotate(45deg);
+}
+.result-col.before .result-col-label::before { background: var(--text-light); }
+.result-col.after .result-col-label::before { background: var(--gold); }
+.result-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.result-list li {
+  font-size: 14px; line-height: 1.6;
+  padding-left: 16px; position: relative;
+}
+.result-list li::before {
+  content: '—';
+  position: absolute; left: 0;
+  font-size: 12px;
+}
+.result-col.before .result-list li { color: var(--text-light); }
+.result-col.before .result-list li::before { color: var(--text-light); }
+.result-col.after .result-list li { color: rgba(255,255,255,0.75); }
+.result-col.after .result-list li::before { color: var(--gold-lt); }
+
+/* ── REVIEWS ── */
+.reviews-bg { background: var(--cream); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.reviews-grid { display: flex; flex-direction: column; gap: 12px; }
+.review-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  padding: 24px;
+  transition: border-color 0.2s;
+}
+.review-card:hover { border-color: var(--crimson-lt); }
+.review-header { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+.review-avatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--crimson-dk);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px; font-weight: 600; color: var(--gold-lt);
+  flex-shrink: 0;
+}
+.review-name { font-size: 14px; font-weight: 600; color: var(--crimson-dk); }
+.review-meta { font-size: 12px; color: var(--text-light); margin-top: 2px; }
+.review-stars { color: var(--gold); font-size: 13px; letter-spacing: 1px; }
+.review-text { font-size: 14px; color: var(--text-light); line-height: 1.8; font-style: italic; }
+.review-text::before { content: '«'; color: var(--crimson-lt); font-size: 18px; }
+.review-text::after  { content: '»'; color: var(--crimson-lt); font-size: 18px; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 560px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .photo-grid { grid-template-columns: 1fr; gap: 8px; }
+  .photo-wrap { height: 200px; }
+  .who-grid { grid-template-columns: repeat(2, 1fr); }
+  nav { padding: 12px 16px; }
+  .nav-logo { height: 28px; }
+  .hero-logo { width: min(280px, 80vw); }
+  .price-block { padding: 20px 32px; }
+  .pay-btn { padding: 16px 36px; font-size: 15px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <img src="logo-round.png" alt="Красная Печать" class="nav-logo">
+  <a class="nav-cta" href="#cta">Купить курс</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-ornament">К</div>
+  <div class="hero-tag">Онлайн-курс от Красной Печати</div>
+  <img src="logo-round.png" alt="Красная Печать" class="hero-logo">
+  <h1>Заработок на <em>свадебной полиграфии</em> из дома</h1>
+  <p class="hero-sub">Реальная профессия без начальников, дедлайнов и офиса. Работаешь когда удобно — зарабатываешь на красивом.</p>
+  <a class="hero-btn" href="#cta">Купить курс — 9 900 ₽</a>
+  <div class="hero-scroll">Листать</div>
+</div>
+
+<!-- BADGES -->
+<div class="badges">
+  <div class="badge"><div class="badge-line"></div>Без опыта в дизайне</div>
+  <div class="badge"><div class="badge-line"></div>Работа из дома</div>
+  <div class="badge"><div class="badge-line"></div>Без больших вложений</div>
+  <div class="badge"><div class="badge-line"></div>Реальный доход</div>
+  <div class="badge"><div class="badge-line"></div>4 урока — и старт</div>
+</div>
+
+<!-- ABOUT -->
+<div class="section-wrap">
+  <div class="section-label">О нас</div>
+  <div class="about-grid fade-up">
+    <div class="about-logo-wrap">
+      <img src="logo-round.png" alt="КП">
+    </div>
+    <div class="about-text">
+      <h3>Красная Печать — специалисты по свадебной полиграфии</h3>
+      <p>Мы занимаемся свадебной полиграфией и знаем эту нишу изнутри. Теперь запускаем собственное обучение, чтобы каждая желающая могла освоить эту профессию и зарабатывать из дома.</p>
+      <div class="social-links">
+        <a class="social-btn" href="https://instagram.com/redstamp55" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          @redstamp55
+        </a>
+        <a class="social-btn" href="https://t.me/redstamp55" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M21 5L2 12.5l7 1M21 5l-5 15-4.5-5.5M21 5L9 13.5m0 0L9.5 19.5l3-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Telegram
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- PORTFOLIO -->
+<div style="max-width:720px;margin:0 auto;padding:48px 24px 20px;">
+  <div class="section-label">Наши работы</div>
+</div>
+<div class="photo-grid fade-up">
+  <div class="photo-card">
+    <div class="photo-wrap">
+      <div class="photo-placeholder">
+        <span>фото пригласительных</span>
+      </div>
+    </div>
+    <div class="photo-label">Пригласительные</div>
+  </div>
+  <div class="photo-card">
+    <div class="photo-wrap">
+      <div class="photo-placeholder">
+        <span>фото конвертов<br>и печати</span>
+      </div>
+    </div>
+    <div class="photo-label">Конверты и печать</div>
+  </div>
+  <div class="photo-card">
+    <div class="photo-wrap">
+      <div class="photo-placeholder">
+        <span>фото полного<br>комплекта</span>
+      </div>
+    </div>
+    <div class="photo-label">Полный комплект</div>
+  </div>
+</div>
+
+<!-- VIDEO -->
+<div class="video-bg">
+  <div class="video-inner">
+    <div class="section-label">Презентация курса</div>
+    <h2 class="serif">Посмотри, как это работает</h2>
+    <div class="video-frame fade-up">
+      <iframe src="https://rutube.ru/play/embed/63a9477bc46d012b9a1220a64a4973ef" frameborder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- FOR WHO -->
+<div class="for-who-bg">
+  <div class="section-wrap">
+    <div class="section-label">Для кого</div>
+    <h2 class="serif">Этот курс создан для вас, если…</h2>
+    <div class="who-grid fade-up">
+      <div class="who-card"><div class="who-icon"></div><p>Вы в декрете и хотите свой доход</p></div>
+      <div class="who-card"><div class="who-icon"></div><p>Хотите работать из дома без офиса</p></div>
+      <div class="who-card"><div class="who-icon"></div><p>Ищете новую профессию с нуля</p></div>
+      <div class="who-card"><div class="who-icon"></div><p>Хотите зарабатывать без больших вложений</p></div>
+      <div class="who-card"><div class="who-icon"></div><p>Хотите новый доход, не меняя образ жизни</p></div>
+      <div class="who-card"><div class="who-icon"></div><p>Вам нравится создавать красивое своими руками</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- RESULT -->
+<div class="result-bg">
+  <div class="section-wrap">
+    <div class="section-label fade-up">Результат курса</div>
+    <h2 class="serif fade-up">До и после обучения</h2>
+    <div class="result-grid fade-up">
+      <div class="result-col before">
+        <div class="result-col-label">До курса</div>
+        <ul class="result-list">
+          <li>Хотите  зарабатывать из дома</li>
+          <li>Страх продаж, не знаете где брать клиентов</li>
+          <li>CorelDRAW кажется сложным и непонятным</li>
+          <li>Непонятно с чего начать</li>
+          <li>Нет дохода из дома</li>
+        </ul>
+      </div>
+      <div class="result-col after">
+        <div class="result-col-label">После курса</div>
+        <ul class="result-list">
+          <li>Умеете делать пригласительные с нуля</li>
+          <li>Уверенно берёте деньги с клиентов, знаете где их найти</li>
+          <li>Уверенно работаете в CorelDRAW</li>
+          <li>Получаете первые заказы</li>
+          <li>38 000–76 000 ₽ в месяц из дома</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LESSONS -->
+<div class="section-wrap">
+  <div class="section-label">Программа курса</div>
+  <h2 class="serif">4 урока — и вы готовы работать</h2>
+  <div class="lesson-list fade-up">
+    <div class="lesson">
+      <div class="lesson-num">I</div>
+      <div class="lesson-body">
+        <div class="lesson-title">Оборудование</div>
+        <div class="lesson-desc">Что нужно, как выбрать и купить не переплачивая. Особенности, обслуживание и нюансы работы с техникой.</div>
+      </div>
+    </div>
+    <div class="lesson">
+      <div class="lesson-num">II</div>
+      <div class="lesson-body">
+        <div class="lesson-title">Работа в CorelDRAW</div>
+        <div class="lesson-desc">Обучение от дизайнера-преподавателя с опытом всей жизни. После урока уверенно работаете в программе. Получаете 10 шаблонов пригласительных и папку из 100 шрифтов.</div>
+      </div>
+    </div>
+    <div class="lesson">
+      <div class="lesson-num">III</div>
+      <div class="lesson-body">
+        <div class="lesson-title">Сборка пригласительных</div>
+        <div class="lesson-desc">Физическая работа со свадебной продукцией. Видите весь процесс от начала до готового изделия вживую.</div>
+      </div>
+    </div>
+    <div class="lesson">
+      <div class="lesson-num">IV</div>
+      <div class="lesson-body">
+        <div class="lesson-title">Продажи, ценообразование и клиенты</div>
+        <div class="lesson-desc">Где брать клиентов, как составить объявление, как правильно назначить цену. Как продавать без страха. После этого урока страх продаж пропадёт. Урок обязателен.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INCLUDED -->
+<div class="included-bg">
+  <div class="included-inner">
+    <div class="section-label">Что входит</div>
+    <h2 class="serif" style="color:#fff;">Всё, что нужно для старта</h2>
+    <ul class="inc-list fade-up">
+      <li><div class="inc-check">✓</div>4 видеоурока с нуля до результата</li>
+      <li><div class="inc-check">✓</div>10 готовых шаблонов пригласительных</li>
+      <li><div class="inc-check">✓</div>Папка с 100 шрифтами для установки</li>
+      <li><div class="inc-check">✓</div>Урок по продажам и поиску клиентов</li>
+      <li><div class="inc-check">✓</div>Обучение CorelDRAW от профессионального дизайнера</li>
+      <li><div class="inc-check">✓</div>Доступ сразу после оплаты — ссылка на Яндекс Диск</li>
+      <li><div class="inc-check">✓</div>Смотри в удобном темпе. Доступ навсегда</li>
+    </ul>
+  </div>
+</div>
+
+<!-- EARNINGS -->
+<div class="earnings-bg">
+  <div class="earnings-inner">
+    <div class="section-label">Сколько можно заработать</div>
+    <h2 class="serif">Реальные цифры<br>на реальном примере</h2>
+    <div class="earnings-calc fade-up">
+      <div class="calc-header">Средний заказ — комплект из 10 пригласительных</div>
+      <div class="calc-row">
+        <span>Средняя стоимость одного пригласительного</span>
+        <span>600 ₽</span>
+      </div>
+      <div class="calc-row">
+        <span>Комплект 10 штук</span>
+        <span>6 000 ₽</span>
+      </div>
+      <div class="calc-row">
+        <span>Себестоимость материалов</span>
+        <span>— 1 200 ₽</span>
+      </div>
+      <div class="calc-row total">
+        <span>Чистая прибыль с заказа</span>
+        <span>4 800 ₽</span>
+      </div>
+    </div>
+    <p class="calc-note">2–4 заказа в неделю = 38 000–76 000 ₽ в месяц. Работая из дома, в своём темпе.</p>
+  </div>
+</div>
+
+<!-- STEPS -->
+<div class="steps-bg">
+  <div class="section-wrap">
+    <div class="section-label">Как всё устроено</div>
+    <h2 class="serif">Три шага до старта</h2>
+    <div class="steps-grid fade-up">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <div class="step-title">Оплачиваете курс</div>
+          <div class="step-desc">Нажимаете кнопку и оплачиваете — безопасно, картой или через СБП.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <div class="step-title">Сразу получаете ссылку</div>
+          <div class="step-desc">После оплаты мгновенно приходит ссылка на Яндекс Диск со всеми видеоуроками, шаблонами и шрифтами.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <div class="step-title">Учитесь в своём темпе</div>
+          <div class="step-desc">Смотрите видео когда удобно, перематывайте, возобновляйте. Доступ навсегда.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- REVIEWS -->
+<div class="reviews-bg">
+  <div class="section-wrap">
+    <div class="section-label fade-up">Отзывы</div>
+    <h2 class="serif fade-up">Что говорят ученицы</h2>
+    <div class="reviews-grid">
+      <div class="review-card fade-up delay-1">
+        <div class="review-header">
+          <div class="review-avatar">А</div>
+          <div>
+            <div class="review-name">Анастасия К.</div>
+            <div class="review-meta">Омск · в декрете</div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="review-text">Думала, что без опыта в дизайне у меня ничего не получится. Но урок по CorelDRAW объяснили так понятно, что уже через неделю взяла первый заказ. Теперь делаю 2–3 комплекта в неделю прямо дома.</div>
+      </div>
+      <div class="review-card fade-up delay-2">
+        <div class="review-header">
+          <div class="review-avatar">М</div>
+          <div>
+            <div class="review-name">Марина Д.</div>
+            <div class="review-meta">Новосибирск</div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="review-text">Курс окупился с первого же заказа. Всё чётко, без воды — оборудование, программа, сборка и продажи. Особенно помог урок про клиентов, я раньше вообще не умела и боялась продавать.</div>
+      </div>
+      <div class="review-card fade-up delay-3">
+        <div class="review-header">
+          <div class="review-avatar">Е</div>
+          <div>
+            <div class="review-name">Екатерина Р.</div>
+            <div class="review-meta">Тюмень · мама двоих детей</div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="review-text">Искала что-то, что можно делать пока дети спят. Нашла этот курс — и не пожалела. Один вечер на заказ, 2200 рублей чистыми. Для меня это настоящая находка.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="faq-bg">
+  <div class="section-wrap">
+    <div class="section-label">Частые вопросы</div>
+    <h2 class="serif">Отвечаем на Ваши вопросы</h2>
+    <div class="faq-list fade-up">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Нужен ли опыт в дизайне или полиграфии?<span class="faq-arrow">▼</span></button>
+        <div class="faq-a">Нет. Курс создан специально для тех, кто начинает с нуля. Урок по CorelDRAW ведёт профессиональный дизайнер-преподаватель — после него вы сможете уверенно работать в программе. Плюс вы получаете 10 готовых шаблонов, которые достаточно просто редактировать.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Какой принтер нужен и сколько он стоит?<span class="faq-arrow">▼</span></button>
+        <div class="faq-a">Первый урок полностью посвящён оборудованию: какой принтер выбрать, где купить выгоднее и как не переплатить. Мы разбираем конкретные модели и рассказываем обо всех нюансах.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Нужно ли оформлять ИП или самозанятость?<span class="faq-arrow">▼</span></button>
+        <div class="faq-a">Никаких документов не нужно — первое время можно принимать оплату прямо на карту. Начать можно сразу после прохождения курса.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Где брать клиентов? Я никогда ничего не продавала.<span class="faq-arrow">▼</span></button>
+        <div class="faq-a">Именно для этого есть 4-й урок — он обязателен. Вы узнаете, где размещать объявления, как они должны выглядеть и как разговаривать с клиентами. После урока страх продаж пропадает — проверено на практике.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Сколько времени нужно уделять работе?<span class="faq-arrow">▼</span></button>
+        <div class="faq-a">Достаточно 1–2 часов в день. Работа легко совмещается с домашними делами, уходом за ребёнком. Вы сами выбираете когда и сколько работать.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Как долго открыт доступ к курсу?<span class="faq-arrow">▼</span></button>
+        <div class="faq-a">Сразу после оплаты вы получаете ссылку на Яндекс Диск — там лежат все видеоуроки, шаблоны и шрифты. Доступ навсегда.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-bg" id="cta">
+  <div class="cta-inner">
+    <div class="cta-label">Начать сейчас</div>
+    <h2>Готова начать<br>зарабатывать?</h2>
+    <p>Один раз купила — работаешь сколько хочешь</p>
+    <div class="price-block fade-up">
+      <div class="price-label-sm">Стоимость курса</div>
+      <div class="price-val">9 900 ₽</div>
+      <div class="price-note-sm">Доступ навсегда · Все материалы включены</div>
+    </div>
+    <div class="email-wrap">
+      <input type="email" id="buyer-email" class="email-input" placeholder="Ваш email для чека" required>
+    </div>
+    <br>
+    <button class="pay-btn" id="pay-btn" onclick="startPayment()">Оплатить 9 900 ₽</button>
+    <div class="pay-sub">Безопасная оплата · Мгновенный доступ после оплаты</div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>Остались вопросы? Напишите нам — ответим быстро</p>
+  <div class="footer-links">
+    <a class="social-btn" href="https://instagram.com/redstamp55" target="_blank" style="border-color:rgba(255,255,255,0.12);color:rgba(255,255,255,0.5);">
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      Instagram @redstamp55
+    </a>
+    <a class="social-btn" href="https://t.me/redstamp55" target="_blank" style="border-color:rgba(255,255,255,0.12);color:rgba(255,255,255,0.5);">
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none"><path d="M21 5L2 12.5l7 1M21 5l-5 15-4.5-5.5M21 5L9 13.5m0 0L9.5 19.5l3-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Telegram @redstamp55
+    </a>
+  </div>
+
+  <div class="oferta-wrap">
+    <button class="oferta-toggle" onclick="toggleOferta()">
+      <span>Публичная оферта — договор информационно-консультативных услуг</span>
+      <span class="oferta-arrow-sm" id="oferta-arrow">▼</span>
+    </button>
+    <div class="oferta-body" id="oferta-body">
+      <h3>1. Общие положения</h3>
+      <p>Договор считается заключённым с момента полного принятия всех условий настоящей Оферты.</p>
+      <h3>2. Предмет договора</h3>
+      <p>Исполнитель оказывает информационно-консультационные услуги. Акцепт Оферты — оплата услуг Заказчиком.</p>
+      <h3>3. Цена и расчёты</h3>
+      <p>Стоимость устанавливается на сайте. Все расчёты в безналичном порядке.</p>
+      <h3>4. Возврат</h3>
+      <p>В соответствии с Законом РФ № 2300-1 «О защите прав потребителей». Срок ответа — 10 рабочих дней.</p>
+      <h3>5. Конфиденциальность</h3>
+      <p>В соответствии с ФЗ № 152-ФЗ «О персональных данных».</p>
+      <h3>6. Ответственность и форс-мажор</h3>
+      <p>Стороны освобождаются от ответственности при обстоятельствах непреодолимой силы.</p>
+      <div class="requisites">
+        <strong style="color:rgba(255,255,255,0.4);">Реквизиты исполнителя:</strong><br>
+        Мазнёв Максим Дмитриевич · ИНН: 550520684345<br>
+        ОГРНИП: 323554300033565<br>
+        Тел: +7 999 458-14-08 · Email: max0796@mail.ru
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── SCROLL ANIMATIONS ──
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+function toggleFaq(btn) {
+  const answer = btn.nextElementSibling;
+  const isOpen = answer.classList.contains('open');
+  document.querySelectorAll('.faq-a.open').forEach(a => a.classList.remove('open'));
+  document.querySelectorAll('.faq-q.open').forEach(b => b.classList.remove('open'));
+  if (!isOpen) { answer.classList.add('open'); btn.classList.add('open'); }
+}
+
+function toggleOferta() {
+  const body = document.getElementById('oferta-body');
+  const arrow = document.getElementById('oferta-arrow');
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  arrow.style.transform = isOpen ? '' : 'rotate(180deg)';
+}
+
+document.querySelectorAll('a[href="#cta"]').forEach(a => {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    const t = document.getElementById('cta');
+    const top = t.getBoundingClientRect().top + window.pageYOffset - 80;
+    window.scrollTo({ top, behavior: 'smooth' });
+  });
+});
+
+async function startPayment() {
+  const btn = document.getElementById('pay-btn');
+  const emailInput = document.getElementById('buyer-email');
+  const email = emailInput ? emailInput.value.trim() : '';
+  if (!email || !email.includes('@')) {
+    alert('Пожалуйста, введите ваш email для получения чека');
+    emailInput.focus();
+    return;
+  }
+  btn.textContent = 'Создаём платёж…';
+  btn.disabled = true;
+  try {
+    const response = await fetch('/.netlify/functions/create-payment', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email })
+    });
+    const data = await response.json();
+    if (data.url) {
+      window.location.href = data.url;
+    } else {
+      alert('Ошибка при создании платежа. Напишите нам в Telegram @redstamp55');
+      btn.textContent = 'Оплатить 9 900 ₽'; btn.disabled = false;
+    }
+  } catch (e) {
+    alert('Ошибка соединения. Напишите нам в Telegram @redstamp55');
+    btn.textContent = 'Оплатить 9 900 ₽'; btn.disabled = false;
+  }
+}
+</script>
+</body>
+</html>
